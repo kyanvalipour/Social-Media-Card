@@ -1,4 +1,45 @@
-/* .card {
+// let root = document.getElementsByClassName('root') [0];
+let style = document.createElement('style');
+let root = document.createElement('div');
+let body = document.getElementsByTagName('body') [0]
+let card = document.createElement('section');
+let html = `
+<div class="card__wrapper">
+<img src="https://randomuser.me/api/portraits/men/35.jpg" class="card__user-img">
+<div class="card__info">
+    <span class="card__name">Matt Williams</span>
+    <span class="card__title">UI/UX Designer</span>
+</div>
+<div class="card__socials">
+    <div class="card__icon card__icon--fb">
+        <span class="card__icon-box">
+            <i class="fab fa-facebook-f"></i>
+        </span>
+        <span class="card__icon-title">
+            Facebook
+        </span>
+    </div>
+    <div class="card__icon card__icon--ig">
+        <span class="card__icon-box">
+            <i class="fab fa-instagram"></i>
+        </span>
+        <span class="card__icon-title">
+            Instagram
+        </span>
+    </div>
+    <div class="card__icon card__icon--db">
+        <span class="card__icon-box">
+            <i class="fab fa-dribbble"></i>
+        </span>
+        <span class="card__icon-title">
+            Dribbble
+        </span>
+    </div>
+</div>
+</div>
+`;
+let cssStyles = `
+.card {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -92,4 +133,17 @@
 .card__icon--db:hover {
     background: #f962b1;
     color: white;
-} */
+}
+`;
+
+
+body.prepend(root);
+root.classList.add('root');
+card.classList.add('card');
+root.prepend(card);
+root.style.cssText = ` 
+background: url('https://th.bing.com/th/id/R.9b188f49b38196458520247b2be7e478?rik=2z%2fMGL1hGeAVZg&pid=ImgRaw&r=0');
+background-size: cover; 
+background-position: center;
+`;
+document.getElementsByClassName('card') [0].innerHTML = html;
